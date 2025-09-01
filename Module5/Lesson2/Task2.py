@@ -1,48 +1,48 @@
 import csv
 
-# with open('data.csv') as csvfile:
-#     reader = csv.reader(csvfile)
-#     for row in reader:
-#         print(row)
+with open('data.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        print(row)
 
-# with open('data.csv') as f:
-#     reader = csv.reader(f)
-#     print(list(reader))
+with open('data.csv') as f:
+    reader = csv.reader(f)
+    print(list(reader))
 
-# data = [
-#     ['Имя', 'Возраст', 'Город'],
-#     ['Анна', '25', 'Москва'],
-#     ['Петр', '30', 'Санкт-Петербург'],
-#     ['Мария', '28', 'Киев']
-# ]
-#
-# with open('новые_данные.csv', 'w') as csvfile:
-#     writer = csv.writer(csvfile)
-#     writer.writerows(data)
+data = [
+    ['Имя', 'Возраст', 'Город'],
+    ['Анна', '25', 'Москва'],
+    ['Петр', '30', 'Санкт-Петербург'],
+    ['Мария', '28', 'Киев']
+]
 
-# data = [
-#     {'Имя': 'Анна', 'Возраст': '25', 'Город': 'Москва'},
-#     {'Имя': 'Петр', 'Возраст': '30', 'Город': 'Санкт-Петербург'},
-#     {'Имя': 'Мария', 'Возраст': '28', 'Город': 'Киев'}
-# ]
-#
-# with open('данные_с_заголовками.csv', 'w') as csvfile:
-#     fieldnames = ['Имя', 'Возраст', 'Город']
-#     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-#
-#     writer.writeheader()
-#     writer.writerows(data)
-#
-# with open('данные_с_заголовками.csv') as csvfile:
-#     reader = csv.DictReader(csvfile)
-#     for row in reader:
-#         print(row['Имя'], row['Возраст'], row['Город'])
-        # print(row)
+with open('новые_данные.csv', 'w') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(data)
 
-# with open('данные_с_заголовками.csv') as f:
-#     reader = csv.reader(f, delimiter=',')
-#     for row in reader:
-#         print(row)
+data = [
+    {'Имя': 'Анна', 'Возраст': '25', 'Город': 'Москва'},
+    {'Имя': 'Петр', 'Возраст': '30', 'Город': 'Санкт-Петербург'},
+    {'Имя': 'Мария', 'Возраст': '28', 'Город': 'Киев'}
+]
+
+with open('данные_с_заголовками.csv', 'w') as csvfile:
+    fieldnames = ['Имя', 'Возраст', 'Город']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+    writer.writerows(data)
+
+with open('данные_с_заголовками.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        print(row['Имя'], row['Возраст'], row['Город'])
+        #print(row)
+
+with open('данные_с_заголовками.csv') as f:
+    reader = csv.reader(f, delimiter=',')
+    for row in reader:
+        print(row)
 
 
 def txt_to_csv(txt_filename:str, csv_filename:str) -> None:
