@@ -37,7 +37,7 @@ with open('данные_с_заголовками.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         print(row['Имя'], row['Возраст'], row['Город'])
-        #print(row)
+        # print(row)
 
 with open('данные_с_заголовками.csv') as f:
     reader = csv.reader(f, delimiter=',')
