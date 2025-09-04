@@ -26,7 +26,7 @@ def csv_to_json(
         return
 
     # Заголовки
-    headers = lines[0].split(delimiter)
+    headers = [h.strip() for h in lines[0].split(delimiter)]
 
     rows = []
     for line in lines[1:]:
@@ -48,7 +48,7 @@ def csv_to_json(
 
 
 def main():
-    csv_filename = 'prices.csv'
+    csv_filename = 'prices_2.csv'
     json_filename = 'prices.json'
     csv_to_json(csv_filename, json_filename)
 
