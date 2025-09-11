@@ -5,7 +5,7 @@ from datetime import datetime
 
 def analyze_sales(filename: str) -> None:
     total_sales = 0
-    product_count = defaultdict(int) # количество продаж продукта
+    product_sales = defaultdict(int) # сумма продаж по продукту
     monthly_sales = defaultdict(int) # продажи по месяцам
 
     with open(filename, 'r', encoding="utf-8") as f:
@@ -17,8 +17,8 @@ def analyze_sales(filename: str) -> None:
             # общая сумма
             total_sales += amount
 
-            # по количеству продаж (встречаемость)
-            product_count[product] += 1
+            # суммарные продажи по продуктам
+            product_sales[product] += amount
 
             # по месяцам
             date = datetime.strptime(row['Дата'], '%Y-%m-%d')
@@ -28,9 +28,9 @@ def analyze_sales(filename: str) -> None:
     # вывод
     print(f'Общая сумма продаж: {total_sales} руб.')
 
-    # продукт с наибольшим количеством продаж
-    top_product = max(product_count, key=product_count.get)
-    print(f'Самый популярный продукт: {top_product} ({product_count[top_product]} раза)')
+    # продукт с наибольшим объемом продаж
+    top_product = max(product_sales, key=product_sales.get)
+    print(f'Продукт с наибольшим объемом продаж: {top_product} ({product_sales[top_product]} руб.)')
 
     print('Продажи по месяцам:')
     for month, total in monthly_sales.items():
