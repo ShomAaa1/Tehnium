@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация в колонии на Марсе</title>
+</head>
+<body>
+    <h1>Форма регистрации участника колонии на Марсе</h1>
+
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <label for="fullname">Имя и фамилия:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Иван Иванов" required>
+
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" name="age" placeholder="18">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+
+        <fieldset>
+            <legend>Тип миссии:</legend>
+            <input type="radio" id="explorer" name="mission_type" value="исследователь" required>
+            <label for="explorer">Исследователь</label>
+
+            <input type="radio" id="engineer" name="mission_type" value="инженер" required>
+            <label for="engineer">Инженер</label>
+
+            <input type="radio" id="doctor" name="mission_type" value="врач" required>
+            <label for="doctor">Врач</label>
+        </fieldset>
+        <fieldset>
+            <legend>Навыки:</legend>
+            <input type="checkbox" id="programming" name="skills" value="программирование">
+            <label for="programming">Программирование</label>
+
+            <input type="checkbox" id="medicine" name="skills" value="медицина">
+            <label for="medicine">Медицина</label>
+
+            <input type="checkbox" id="construction" name="skills" value="строительство">
+            <label for="construction">Строительство</label>
+        </fieldset>
+
+        <label for="motivation">Почему вы хотите полететь на Марс?</label>
+        <textarea id="motivation" name="motivation" rows="4" cols="50" placeholder="Опишите ваши мотивы"></textarea>
+
+        <label for="photo">Фото для анкеты:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+
+        <input type="checkbox" id="agreement" name="agreement" required>
+        <label for="agreement">Я согласен с условиями миссии</label>
+
+        <button type="submit">Отправить заявку</button>
+    </form>
+    
+</body>
+</html>
