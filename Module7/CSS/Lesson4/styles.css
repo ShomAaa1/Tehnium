@@ -1,0 +1,33 @@
+.stage {
+    position: relative;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background: #0f172a;
+    font-family: system-ui, -apple-system, 'Segoe UI';
+    color: #fff;
+}
+
+.hint {
+    position: absolute;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    max-width: 260px;
+    line-height: 1.3;
+    font-size: 0.95rem;
+    z-index: 1000;
+    cursor: default;
+}
+
+.hint.tl { top: 1rem; left: 1rem; background: #e63946; }
+.hint.tr { top: 1rem; right: 1rem; background: #457b9d; }
+.hint.bl { bottom: 1rem; left: 1rem; background: #2a9d8f; }
+.hint.br { bottom: 1rem; right: 1rem; background: #f4a261; color: #0b1320; }
+
+@media (max-width: 420px) {
+    .hint { max-width: 46vw; font-size: 0.85rem; padding: 0.45rem 0.8rem; }
+    .hint.tl, hint.tr {top: 0.6rem; }
+    .hint.bl, .hint.br {bottom: 0.6rem; }
+}
