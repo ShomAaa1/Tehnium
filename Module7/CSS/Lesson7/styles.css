@@ -70,6 +70,18 @@ h3 {
     text-align: center;
     text-decoration: none;
     color: black;
+    display: inline-flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.arrow {
+    display: flex;
+    justify-content: right;
+}
+
+.near-arrow {
+    width: 172px;
 }
 
 .social-links {
@@ -88,6 +100,10 @@ h3 {
     text-decoration: none;
     max-width: 232px;
     width: 100%;
+}
+
+.bold {
+    font-weight: 700;
 }
 
 .bio {
@@ -193,7 +209,7 @@ h3 {
 .show-project a {
     max-width: 180px;
     width: 100%;
-    display: block;
+    display: inline-flex;
     text-align: center;
     padding: 18px 14px;
     border-radius: 18px;
@@ -203,4 +219,16 @@ h3 {
     line-height: 25px;
     text-decoration: none;
     color: black;
+}
+
+.show-button {
+    background: #AADB6B;
+    max-width: 232px;
+    padding: 18px 14px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: end;
+    gap: 8px;
 }
