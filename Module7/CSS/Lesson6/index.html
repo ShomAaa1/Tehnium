@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстрация CSS Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-app">
+        <header class="site-header">
+            <h1>CSS Grid - демо</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О проекте</a></li>
+                    <li><a href="#">Галерея</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <aside class="sidebar">
+            <h2>Боковая панель</h2>
+            <p>Это пример боковой панели, которая может содержать дополнительную информацию или навигацию.</p>
+            <ul>
+                <li>Пункт 1</li>
+                <li>Пункт 2</li>
+                <li>Пункт 3</li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <section class="intro">
+                <h2>Что такое Grid?</h2>
+                <p>CSS Grid — мощная двухмерная система раскладки, которая позволяет управлять рядами и колонками одновременно.
+                В этом примере показаны: grid-template-areas, auto-fit + minmax для адаптивной сетки галереи, и выравнивание элементов.
+                </p>
+            </section>
+
+            <section class="gallery" aria-label="Галерея изображений">
+                <h2>Галерея</h2>
+                <div class="cards">
+                    <div class="card">1</div>
+                    <div class="card">2</div>
+                    <div class="card">3</div>
+                    <div class="card">4</div>
+                    <div class="card">5</div>
+                    <div class="card">6</div>
+                </div>
+            </section>
+
+            <section class="article">
+                <h2>Статья</h2>
+                <p>Это пример статьи, которая может содержать текстовый контент. CSS Grid позволяет легко управлять макетом страницы, делая его адаптивным и удобным для чтения.</p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 Демонстрация CSS Grid. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>
