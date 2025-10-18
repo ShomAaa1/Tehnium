@@ -19,7 +19,7 @@ def get_latest_launch():
 data = get_latest_launch()
 if data:
     name = data.get('name')
-    date = data.get('data_utc')
+    date = data.get('date_utc')
     success = data.get('success')
     details = data.get('details')
     cores = data.get('cores', [])
