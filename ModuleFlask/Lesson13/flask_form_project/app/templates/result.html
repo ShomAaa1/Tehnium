@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body>
+    <h1>Submission Successful</h1>
+    <p>Thank you, <strong>{{ name }}</strong>!</p>
+    <p>We have sent a confirmation to <strong>{{ email }}</strong>.</p>
+    <p>Your favourite color is: 
+        <span class="color-box" style="background-color: {{ color }}"></span>
+        {{ color }}
+    </p>
+    <p>Your profession is: <strong>{{ job }}</strong>.</p>
+    <p>Your hobbies: {{ hobbies | join(', ') if hobbies else "nothing chosen" }}.</p>
+    <p>Your level: <strong>{{ level }}</strong>.</p>
+
+    <hr>
+
+    <p class="joke">😂 Random joke: "{{ joke }}"</p>
+    <a href="/">Go back to form</a>
+</body>
+</html>

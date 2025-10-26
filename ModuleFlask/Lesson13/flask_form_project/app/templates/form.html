@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1 class="funny-title">😄 Enter Your Details! 🦄</h1>
+    <form action="/submit" method="POST" class="funny-form" novalidate>
+        <label for="name">Your Super Cool Name:</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="email">Your Awesome Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="color">Your Favourite Color:</label><br>
+        <input type="color" name="color" id="color" value="#ff69b4" required>
+        <span id="color-preview" class="color-preview"></span><br><br>
+
+        <label for="job">Your job:</label>
+        <select name="job" id="job">
+            <option value="teacher">Teacher</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <fieldset class="funny-hobbies">
+            <legend>Your Hobbies:</legend>
+            <input type="checkbox" id="books" name="hobby" value="books">
+            <label for="books">Books</label>
+
+            <input type="checkbox" id="sports" name="hobby" value="sports">
+            <label for="sports">Sports</label>
+
+            <input type="checkbox" id="games" name="hobby" value="games">
+            <label for="games">Games</label>
+
+            <input type="checkbox" id="music" name="hobby" value="music">
+            <label for="music">Music</label>
+        </fieldset><br>
+
+        <fieldset class="funny-radio">
+            <legend>Your User Level:</legend>
+            <input type="radio" id="beginner" name="level" value="beginner" checked>
+            <label for="beginner">Новичок</label>
+        
+            <input type="radio" id="advanced" name="level" value="advanced">
+            <label for="advanced">Продвинутый</label>
+        </fieldset><br>
+
+        <button type="button" id="surprise-btn">Нажми меня 😜</button>
+
+        <button type="submit" class="funny-button">🚀 Let's Go!</button>
+    </form>
+
+    <div id="funny-error" class="funny-error"></div>
+
+    <script>
+        const colorInput = document.getElementById('color');
+        const colorPreview = document.getElementById('color-preview');
+    
+        colorInput.addEventListener('input', function() {
+            colorPreview.style.backgroundColor = colorInput.value;
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const surpriseBtn = document.getElementById('surprise-btn');
+            const form = document.querySelector('form');
+            const errorBox = document.getElementById('funny-error');
+        
+            const emojis = ["😂", "🎉", "💥", "🦄", "🍕", "🌈", "✨", "😎", "🤩", "🎈"];
+
+            form.addEventListener('submit', (e) => {
+                const name = form.querySelector('input[name="name"]').value.trim();
+                const email = form.querySelector('input[name="email"]').value.trim();
+                const color = form.querySelector('input[name="color"]').value.trim();
+
+                let errorMessage = "";
+
+                if (!name) {
+                    errorMessage = "😎 Мы не можем обработать форму без вашего имени, мистер Аноним!";
+                } else if (!email) {
+                    errorMessage = "📧 Ой! А где же ваш e-mail? Нам нужен адрес, чтобы отправить котика!";
+                } else if (!color) {
+                    errorMessage = "🎨 Забыл выбрать любимый цвет? Даже радуга грустит!";
+                }
+
+                if (errorMessage) {
+                    e.preventDefault(); // Останавливаем отправку формы
+                    errorBox.textContent = errorMessage;
+                    errorBox.style.display = 'block';
+                    errorBox.classList.add('funny-error');
+                    return;
+                }
+
+                // Если всё ок — очищаем сообщение
+                errorBox.textContent = "";
+                errorBox.style.display = 'none';
+            });
+
+        
+            // 🏃‍♀️ Кнопка убегает при наведении
+            let escapeCount = 0;
+
+            surpriseBtn.addEventListener('mouseover', () => {
+                if (escapeCount >= 5) return; // после 5 убеганий — сдаётся
+                escapeCount++;
+
+                const formRect = form.getBoundingClientRect();
+                const btnRect = surpriseBtn.getBoundingClientRect();
+
+                const maxX = formRect.width - btnRect.width - 20;
+                const maxY = formRect.height - btnRect.height - 20;
+
+                const newX = Math.random() * maxX;
+                const newY = Math.random() * maxY;
+
+                surpriseBtn.style.position = "absolute";
+                surpriseBtn.style.left = newX + "px";
+                surpriseBtn.style.top = newY + "px";
+            });
+
+        
+            // 🎆 При клике — взрыв смайликов
+            surpriseBtn.addEventListener('click', () => {
+                const emoji = document.createElement('span');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.className = "emoji";
+
+                // Случайная позиция по всей форме
+                const formRect = form.getBoundingClientRect();
+                const x = Math.random() * (formRect.width - 30);
+                const y = Math.random() * (formRect.height - 30);
+                emoji.style.left = x + "px";
+                emoji.style.top = y + "px";
+
+                form.appendChild(emoji);
+
+                // исчезновение через 3-5 секунд
+                setTimeout(() => {
+                    form.removeChild(emoji);
+                }, 1500);
+            });
+        });
+    </script>
+    
+    
+    
+</body>
+</html>

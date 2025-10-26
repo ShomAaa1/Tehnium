@@ -1,0 +1,272 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fffb91;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.funny-title {
+    font-size: 3rem;
+    color: #ff69b4;
+    text-shadow: 3px 3px #ffa500;
+    margin-top: 20px;
+    animation: wobble 2s infinite;
+}
+
+@keyframes wobble {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.funny-form {
+    margin: 50px auto;
+    padding: 20px;
+    width: 400px;
+    background-color: #ffe4e1;
+    border: 5px dashed #ff4500;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transform: rotate(-2deg);
+    position: relative;
+}
+
+.funny-form input[type="text"],
+.funny-form input[type="email"],
+.funny-form input[type="color"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff1493;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #fffaf0;
+}
+
+.funny-form input[type="text"]:hover,
+.funny-form input[type="email"]:hover,
+.funny-form input[type="color"]:hover {
+    background-color: #ffd700;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.funny-form select {
+    width: 84%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff1493;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #fffaf0;
+    cursor: pointer;
+    transition: 0.3s ease
+}
+
+.funny-form select:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+.color-preview {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    border: 2px solid #ff1493;
+    border-radius: 5px;
+    vertical-align: middle;
+    background-color: #ff69b4;
+    transition: background-color 0.3s ease;
+}
+
+.funny-hobbies input[type="checkbox"],
+.funny-radio input[type="radio"] {
+    display: none;
+}
+
+.funny-hobbies {
+    border: 3px dashed #ff69b4;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #fff0f5;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.funny-hobbies legend {
+    font-size: 1.3rem;
+    color: #ff4500;
+    font-weight: bold;
+}
+
+/* Кастомные чекбоксы */
+.funny-hobbies label {
+    position: relative;
+    padding-left: 35px;
+    user-select: none;
+    display: block;
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #d63384;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.funny-hobbies label::before {
+    content: "📚";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+/* Отмеченный чекбокс */
+.funny-hobbies input[type="checkbox"]:checked + label::before {
+    transform: rotate(20deg) scale(1.3);
+    content: "✅";
+}
+
+.funny-hobbies label:hover::before {
+    transform: scale(1.2);
+}
+
+.funny-radio {
+    border: 3px dotted #ffa500;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #fffacd;
+    text-align: left;
+}
+
+.funny-radio legend {
+    font-size: 1.3rem;
+    color: #ff4500;
+    font-weight: bold;
+}
+
+.funny-radio label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    font-size: 1.1rem;
+    color: #cc3366;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+}
+
+.funny-radio label::before {
+    content: "⚪"; /* пустой круг по умолчанию */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.funny-radio input[type="radio"]:checked + label::before {
+    content: "🔴"; /* выбранный круг */
+    transform: scale(1.2);
+}
+
+.funny-radio label:hover::before {
+    transform: scale(1.3);
+}
+
+
+.funny-button {
+    background-color: #ff4500;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.funny-button:hover {
+    background-color: #ff6347;
+    transform: scale(1.2);
+    transition: 0.3s ease;
+}
+
+#surprise-btn {
+    background-color: #8A2BE2;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+#surprise-btn:hover {
+    background-color: #BA55D3;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 2rem;
+    pointer-events: none; /* чтобы не мешали кликам по форме */
+    animation: flyUp 1.5s ease-out forwards;
+}
+
+@keyframes flyUp {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(calc(-10px + 20px * random()), -30px) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(-10px + 20px * random()), -80px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.funny-error {
+    margin-top: 15px;
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
